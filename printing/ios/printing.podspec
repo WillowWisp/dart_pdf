@@ -13,6 +13,7 @@ Plugin that allows Flutter apps to generate and print documents to android or io
   s.author           = { 'David PHAM-VAN' => 'dev.nfet.net@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
+  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   
   s.ios.deployment_target = '8.0'

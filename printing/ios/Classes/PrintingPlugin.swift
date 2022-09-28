@@ -18,15 +18,15 @@ import Flutter
 import Foundation
 
 @objc
-public class PrintingPlugin: NSObject, FlutterPlugin {
-    private static var instance: PrintingPlugin?
+public class SwiftPrintingPlugin: NSObject, FlutterPlugin {
+    private static var instance: SwiftPrintingPlugin?
     private var channel: FlutterMethodChannel
     public var jobs = [UInt32: PrintJob]()
 
     init(_ channel: FlutterMethodChannel) {
         self.channel = channel
         super.init()
-        PrintingPlugin.instance = self
+        SwiftPrintingPlugin.instance = self
     }
 
     @objc
@@ -42,7 +42,7 @@ public class PrintingPlugin: NSObject, FlutterPlugin {
     /// Entry point
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "net.nfet.printing", binaryMessenger: registrar.messenger())
-        let instance = PrintingPlugin(channel)
+        let instance = SwiftPrintingPlugin(channel)
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 

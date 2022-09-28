@@ -22,7 +22,7 @@ func dataProviderReleaseDataCallback(info _: UnsafeMutableRawPointer?, data: Uns
 }
 
 public class PrintJob: UIPrintPageRenderer, UIPrintInteractionControllerDelegate {
-    private var printing: PrintingPlugin
+    private var printing: SwiftPrintingPlugin
     public var index: Int
     private var pdfDocument: CGPDFDocument?
     private var urlObservation: NSKeyValueObservation?
@@ -33,7 +33,7 @@ public class PrintJob: UIPrintPageRenderer, UIPrintInteractionControllerDelegate
     private var dynamic = false
     private var currentSize: CGSize?
     
-    public init(printing: PrintingPlugin, index: Int) {
+    public init(printing: SwiftPrintingPlugin, index: Int) {
         self.printing = printing
         self.index = index
         pdfDocument = nil
